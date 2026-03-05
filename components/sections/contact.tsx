@@ -75,6 +75,8 @@ export function ContactSection() {
 
     setIsSubmitting(true)
 
+    console.log("Backend URL:", process.env.NEXT_PUBLIC_BACKEND_URL)
+
     const payload = {
       name: formState.name,
       email: formState.email,
@@ -85,7 +87,9 @@ export function ContactSection() {
 
     // Try POSTing to server API
     try {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/inquiries`, {
+      const fetchUrl = `${process.env.NEXT_PUBLIC_BACKEND_URL}/inquiries`
+      console.log("Fetching from:", fetchUrl)
+      const res = await fetch(fetchUrl, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
