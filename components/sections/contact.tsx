@@ -85,7 +85,7 @@ export function ContactSection() {
 
     // Try POSTing to server API
     try {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/inquiries`, {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/inquiries`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
