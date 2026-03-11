@@ -45,23 +45,25 @@ export function Navbar() {
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16 lg:h-20">
+          <div className="flex items-center justify-between h-24 lg:h-32">
             {/* Logo */}
             <motion.div
               whileHover={{ scale: 1.05 }}
               className="flex items-center gap-2 cursor-pointer"
               onClick={() => scrollToSection("#home")}
             >
-              <div className="relative w-10 h-10 lg:w-12 lg:h-12">
+              <div className="relative w-20 h-20 lg:w-28 lg:h-28">
                 <div className="absolute inset-0 bg-gradient-to-r from-primary to-secondary rounded-lg rotate-6" />
                 <div className="absolute inset-0.5 bg-background rounded-lg flex items-center justify-center">
                   <span className="text-primary font-bold text-lg lg:text-xl"></span> 
-                  <img src="/nini_logo.png" alt="Logo" className="w-12 h-12 lg:w-12 lg:h-12" />
+                  {/* <img src="/nini_logo.png" alt="Logo" className="w-14 h-14 lg:w-14 lg:h-14" /> */}
+                  <img src="/nini_logo.png"alt="Logo"className="w-full h-full object-contain p-"/> 
                 </div>
               </div>
-              <div className="hidden sm:block">
+              <div className="hidden sm:block flex flex-col justify-center">
                 {/* <span className="text-foreground font-bold text-lg">NI NI</span> */}
-                <span className="text-muted-foreground text-sm block -mt-1">Digital Media</span>
+                {/* <span className="text-muted-foreground text-sm block -mt-1">Digital Media</span> */}
+                <span className="text-muted-foreground text-sm block">Digital Media</span>
               </div>
             </motion.div>
 

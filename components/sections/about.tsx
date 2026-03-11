@@ -12,7 +12,7 @@ const cities = [
     description: "Our flagship creative hub where big ideas come to life. Advertising, branding, and full-service production.",
     icon: Palette,
     color: "from-primary to-accent",
-    image: "mumbai.png",
+    image: "mumbai.jpg",
   },
   {
     name: "Kolkata",
@@ -20,7 +20,7 @@ const cities = [
     description: "Strategic PR and media relations. Building brand narratives and managing reputations across East India.",
     icon: Megaphone,
     color: "from-secondary to-primary",
-    image: "kolkata.png",
+    image: "kolkata.jpg",
   },
   {
     name: "Hyderabad",
@@ -28,7 +28,7 @@ const cities = [
     description: "Digital-first campaigns and social media mastery. Engaging audiences across platforms that matter.",
     icon: Share2,
     color: "from-accent to-secondary",
-    image: "hyderabad.png",
+    image: "hyderabad.jpg",
   },
 ]
 

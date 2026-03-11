@@ -1,5 +1,6 @@
 "use client"
 
+import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { ParticleField } from "@/components/particle-field"
@@ -12,6 +13,19 @@ export function HeroSection() {
       element.scrollIntoView({ behavior: "smooth" })
     }
   }
+  const [projectCount, setProjectCount] = useState(50);
+
+  useEffect(() => {
+    const START_DATE = new Date("2026-03-11"); // The date your "50" count starts from
+    const INITIAL_PROJECTS = 50;
+    const INCREMENT_PER_WEEK = 1; // Increase by 1 every 7 days
+
+    const today = new Date();
+    const diffInMs = today.getTime() - START_DATE.getTime();
+    const diffInWeeks = Math.floor(diffInMs / (1000 * 60 * 60 * 24 * 7));
+    
+    setProjectCount(INITIAL_PROJECTS + (diffInWeeks * INCREMENT_PER_WEEK));
+  }, []);
 
   return (
     <section
@@ -128,7 +142,7 @@ export function HeroSection() {
           >
             {[
               { value: "3+", label: "Cities" },
-              { value: "50+", label: "Projects" },
+              { value: `${projectCount}+`, label: "Projects" },
               { value: "100%", label: "Dedication" },
             ].map((stat) => (
               <div key={stat.label} className="text-center">
@@ -142,25 +156,6 @@ export function HeroSection() {
         </motion.div>
       </div>
 
-      {/* Scroll Indicator */}
-      {/* <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.2 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20"
-      >
-        <motion.div
-          animate={{ y: [0, 10, 0] }}
-          transition={{ repeat: Infinity, duration: 2 }}
-          className="w-6 h-10 rounded-full border-2 border-muted-foreground/30 flex items-start justify-center p-1"
-        >
-          <motion.div
-            animate={{ y: [0, 12, 0] }}
-            transition={{ repeat: Infinity, duration: 2 }}
-            className="w-1.5 h-3 bg-primary rounded-full"
-          />
-        </motion.div>
-      </motion.div> */}
     </section>
   )
 }
