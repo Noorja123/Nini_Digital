@@ -84,11 +84,11 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-balance"
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-balance"
           >
             <span className="text-foreground">Fueling </span>
             <span className="bg-gradient-to-r from-primary via-accent to-secondary bg-clip-text text-transparent">
-              brands 
+              Brands 
             </span>
             <span className="text-foreground">with</span>
             <br />
@@ -104,7 +104,7 @@ export function HeroSection() {
             className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto text-pretty"
           >
             Transform your brand with cutting-edge digital solutions. From advertising to 
-            videography, PR to social media — we bring your vision to life across India.
+            videography, PR to social media-We bring your vision to life across India.
           </motion.p>
 
           {/* CTAs */}

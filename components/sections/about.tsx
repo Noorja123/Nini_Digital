@@ -8,7 +8,7 @@ import { MapPin, Palette, Megaphone, Share2 } from "lucide-react"
 const cities = [
   {
     name: "Mumbai",
-    specialty: "Creative Studio",
+    specialty: "Creative Studio & Branding",
     description: "Our flagship creative hub where big ideas come to life. Advertising, branding, and full-service production.",
     icon: Palette,
     color: "from-primary to-accent",
@@ -16,7 +16,7 @@ const cities = [
   },
   {
     name: "Kolkata",
-    specialty: "Public Relations",
+    specialty: "Public Relations & political Campaigns",
     description: "Strategic PR and media relations. Building brand narratives and managing reputations across East India.",
     icon: Megaphone,
     color: "from-secondary to-primary",
@@ -24,7 +24,7 @@ const cities = [
   },
   {
     name: "Hyderabad",
-    specialty: "Social Media",
+    specialty: "Social Media & Influencer Network",
     description: "Digital-first campaigns and social media mastery. Engaging audiences across platforms that matter.",
     icon: Share2,
     color: "from-accent to-secondary",

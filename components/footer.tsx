@@ -55,13 +55,13 @@ export function Footer() {
                 whileHover={{ scale: 1.02 }}
                 className="flex items-center gap-2 mb-4"
               >
-                <div className="relative w-10 h-10">
-                  <div className="absolute inset-0 bg-gradient-to-r from-primary to-secondary rounded-lg rotate-6" />
+                <div className="relative w-20 h-20 flex item-center justify-center">
+                  {/* <div className="absolute inset-0 bg-gradient-to-r from-primary to-secondary rounded-lg rotate-6" />
                   <div className="absolute inset-0.5 bg-background rounded-lg flex items-center justify-center">
-                    <span className="text-primary font-bold"></span>
-                    <img src="/nini_logo.png" alt="Logo" className="w-12 h-12 lg:w-12 lg:h-12" />
+                    <span className="text-primary font-bold"></span> */}
+                    <img src="/nini_logo.png" alt="Logo" className="w-full h-full object-contain" />
                   </div>
-                </div>
+                {/* </div> */}
                 <div>
                   <span className="text-foreground font-bold">NI NI</span>
                   <span className="text-muted-foreground text-sm block -mt-1">Digital Media</span>
