@@ -53,17 +53,9 @@ export function Navbar() {
               onClick={() => scrollToSection("#home")}
             >
 
-              {/* <div className="relative w-20 h-20 lg:w-28 lg:h-28">
-                <div className="absolute inset-0 bg-gradient-to-r from-primary to-secondary rounded-lg rotate-6" />
-                <div className="absolute inset-0.5 bg-background rounded-lg flex items-center justify-center">
-                  <span className="text-primary font-bold text-lg lg:text-xl"></span>  */}
-                  {/* <img src="/nini_logo.png" alt="Logo" className="w-14 h-14 lg:w-14 lg:h-14" /> */}
-                  {/* <img src="/nini_logo.png"alt="Logo"className="w-full h-full object-contain p-"/> 
-                </div>
-              </div> */}
-
+  
             
-              <div className="relative w-35 h-25 lg:w-35 lg:h-35 flex items-center justify-center">
+              <div className="relative w-38 h-25 lg:w-42 lg:h-40 flex items-center justify-center">
                <img src="nini_logo.png"alt="Logo" className="w-full h-full object-contain"/>
               </div>
               <div className="hidden sm:block flex flex-col justify-center">

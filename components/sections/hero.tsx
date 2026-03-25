@@ -1,19 +1,44 @@
 "use client"
 
-import { useState, useEffect } from "react"
-import { motion } from "framer-motion"
+import { useState, useEffect, useRef } from "react"
+import { motion, useInView, animate, useMotionValue, useTransform } from "framer-motion"
+// import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { ParticleField } from "@/components/particle-field"
 import { ArrowRight, Play } from "lucide-react"
+import { count } from "console"
+
+function Counter({ target, suffix = "" }: { target: number; suffix?: string }) {
+  const [count, setCount] = useState(0)
+  const ref=useRef(null)
+  const isInView=useInView(ref,{once:true})
+
+  useEffect(() => {
+    if(isInView){
+      const timeout=setTimeout(()=>{
+        let start=0
+        const end=target
+        const speed = target < 10 ? 150 : 30
+        const duration=1000
+        // const incrementTime=duration/end
+
+        const timer=setInterval(()=>{
+          start+=1
+          setCount(start)
+          if(start>=end)clearInterval(timer)
+          },speed)
+        return()=>clearInterval(timer)
+        },100);
+        return()=>clearTimeout(timeout)
+      }
+    },[isInView,target])
+    return<span ref={ref}>{count}{suffix}</span>
+  }
+    
 
 export function HeroSection() {
-  const scrollToSection = (href: string) => {
-    const element = document.querySelector(href)
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" })
-    }
-  }
-  const [projectCount, setProjectCount] = useState(50);
+
+  const [projectCount, setProjectCount] = useState(0);
 
   useEffect(() => {
     const START_DATE = new Date("2026-03-11"); // The date your "50" count starts from
@@ -107,6 +132,7 @@ export function HeroSection() {
             videography, PR to social media-We bring your vision to life across India.
           </motion.p>
 
+
           {/* CTAs */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -134,7 +160,7 @@ export function HeroSection() {
           </motion.div>
 
           {/* Stats */}
-          <motion.div
+          {/* <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1 }}
@@ -152,8 +178,36 @@ export function HeroSection() {
                 <div className="text-sm text-muted-foreground">{stat.label}</div>
               </div>
             ))}
-          </motion.div>
+          </motion.div> */}
         </motion.div>
+        <div className="grid grid-cols-3 gap-8 pt-12 max-w-lg mx-auto">
+          {/* Cities */}
+          <div className="text-center">
+            <div className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+              <Counter target={3} suffix="+" />
+            </div>
+            <div className="text-sm text-muted-foreground">Cities</div>
+          </div>
+
+          {/* Projects (Your Dynamic Logic) */}
+          <div className="text-center">
+            <div className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+              {/* Only render once projectCount is ready */}
+              {projectCount > 0 && (
+                <Counter target={projectCount} suffix="+" />
+              )}
+            </div>
+            <div className="text-sm text-muted-foreground">Projects</div>
+          </div>
+
+          {/* Dedication */}
+          <div className="text-center">
+            <div className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+              <Counter target={100} suffix="%" />
+            </div>
+            <div className="text-sm text-muted-foreground">Dedication</div>
+          </div>
+        </div>
       </div>
 
     </section>
